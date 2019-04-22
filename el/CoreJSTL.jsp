@@ -30,6 +30,18 @@
     <p><a href="/login.ok">로그인</a></p>
   </c:otherwise>
 </c:choose>
+ 
+<%
+String header = request.getHeader("User-Agent");
+String browser = request.getHeader("User-Agent"); 
+%>
+<c:if test="browser != null && browser.indexOf('MSIE') != -1"><c:set var="mobileYN" value="M" scope="request" /></c:if>
+<c:if test="browser != null && browser.indexOf('Firefox') != -1"><c:set var="mobileYN" value="F" scope="request" /></c:if>
+<c:choose>
+    <c:when test="browser != null && browser.indexOf('MSIE') != -1"><c:set var="mobileYN" value="M" scope="request" /></c:when>    
+    <c:when test="browser != null && browser.indexOf('Firefox') != -1"><c:set var="mobileYN" value="M" scope="request" /></c:when>
+    <c:otherwise  ><c:set var="mobileYN" value="mobile" scope="request" /></c:otherwise>
+</c:choose>
 
 <!-- forEach 정수 범위내의 반복 -->
 <c:forEach var="i" begin="0" end="10" step="2" varStatus="x">
