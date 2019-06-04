@@ -1,0 +1,44 @@
+키오스크 애플리케이션을 웹 사이트로 개발할 경우의 장점 :
+
+1.중앙 집중식 코드베이스에 업데이트를 신속하게 배포하십시오. 업데이트를 웹 사이트에 배포하는 것은 개별 키오스크에 업데이트를 배포하는 대신 서버의 웹 사이트를 업데이트하는 것입니다.
+2.지름길로 기존 웹 사이트를 재사용하거나 더 친근한 분위기로 재 작업 할 수 있습니다.
+3.기본 웹 사이트 개발은 일반적으로 Windows 소프트웨어보다 학습 곡선이 짧습니다.
+4.민감한 정보는 서버에 저장 될 수 있으며 손상 될 수있는 개별 키오스크로 재분배되지 않습니다.
+5.Angular, Knockout 등과 같은 프레임 워크를 사용하면 페이지 당 html을 전송할 필요가없고 데이터 만 전송되므로 웹 사이트가 기본 Windows 응용 프로그램처럼 작동 할 수 있습니다.
+
+키오스크 애플리케이션을 웹 사이트로 개발할 때의 단점 :
+
+1.업데이트가 나 빠지면 한 번에 모든 키오스크를 무너 뜨릴 수 있습니다. 웹 서버에 업데이트를 쉽게 배포 할 수있는 것은 업데이트에 문제가있을 때 양날의 검이 될 수 있습니다.
+2.하드웨어 공급 업체는 종종 ActiveX / 애플릿에 대한 제한된 통합 지원을 제공합니다.
+3.UI 응답 성은 일반적으로 더 많은 대역폭을 필요로하므로 속도가 더 빠르므로 더 비싼 (더 빠른) 인터넷 연결을 구매하게됩니다.
+4.웹 브라우저는 효과적인 재시도 및 캐싱 논리 를 구현하는 데 어려움을 겪습니다 .
+5.페이지 및 응답을 생성 할 때 서버 처리의로드를 증가시킵니다.
+6.서버에서 세션 만료 및 응용 프로그램 풀 재활용을 고려해야합니다.
+
+웹 사이트를 개발할 때 크로스 브라우저 기능을 고려할 때 일반적으로 떠오르는 또 다른 단점이 있습니다.
+
+다행스럽게도 키오스크는 단일 웹 브라우저 만 실행하도록 제한되어 있으므로 키오스크 환경에서는 문제가되지 않습니다. 즉, 키오스크 사용자는 웹 브라우저를 선택하지 않고 키오스크가 설정된 웹 브라우저를 사용합니다.
+
+Pros of developing your kiosk application as a website:
+
+1.Quickly deploy updates to a centralized code-base. Deploying updates to your website is just a matter of updating the website on the server, rather than deploying updates to individual kiosks.
+2.As a shortcut you can reuse your existing website or just rework it to be more touch friendly.
+3.Basic website development typically has a shorter learning curve than Windows software.
+4.Sensitive information can be stored on the server and never redistributed to individual kiosks which could be compromised.
+5.Using frameworks like Angular, Knockout, etc…, you don’t have to transfer any html per page, only data, which can make the website behave more like a native Windows application.
+
+Cons of developing your kiosk application as a website:
+
+1.If an update goes bad you break all of your kiosks at once. The ease of deploying updates to a web server can be a double-edged sword when something goes wrong with the updates.
+2.Hardware vendors often provide limited integration support for ActiveX/Applets.
+3.UI responsiveness is typically slower because it requires more bandwidth so you end up purchasing a more expensive (faster) internet connection.
+4.Web browsers make it a challenge to implement effective retry and caching logic.
+5.Increases the load on the server processing when generating pages and responses.
+6.The need to account for session expiration and application pool recycling on the server.
+
+Another con that typically comes to mind when considering developing websites is cross-browser capability.
+
+Fortunately this is not a concern in the kiosk environment since the kiosk is restricted to only run a single web browser. In other words, the kiosk user doesn’t get to pick their web browser, they use whatever web browser the kiosk is setup for.
+
+
+https://blog.kiosksimple.com/2014/08/11/5-reasons-to-develop-your-kiosk-application-as-a-website/
