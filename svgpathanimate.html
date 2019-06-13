@@ -1,0 +1,113 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>SVG, path, animation, line, draw</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+  <style id="compiled-css" type="text/css">
+      * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html, body {
+  height: 100vh;
+}
+ 
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 52.168447517%;
+  background-image: url(https://developers.naver.com/inc/devcenter/images/mapjs-sample.png);
+  background-size: contain;
+  box-shadow: 0 0 100px #000;
+  border-radius: 10px;
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  padding-bottom: 52.168447517%;
+  top: 0;
+}
+.line svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.line svg path {
+  fill-opacity: 0;
+  stroke: #f00;
+  stroke-width: 5;
+  stroke-dasharray: 870;
+  stroke-dashoffset: 870;
+  animation-name: draw;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+//<![CDATA[
+
+    window.onload=function(){
+      
+
+
+    }
+
+//]]></script>
+
+</head>
+<body>// https://jsfiddle.net/mill01/myoLk65n/
+    <div class="wrapper">
+  <div class="map"></div>
+  <div class="line">
+    <svg height="830" viewBox="0 0 1591 830" width="1591">
+      <path d="M 50,50 
+        140,140 
+        140,180 
+        180,180 
+        180,220 
+        220,220 
+        260,260
+				260,100
+				350,100"></path>
+    </svg>
+  </div>
+</div>
+
+  
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: ""
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
+</body></html>
