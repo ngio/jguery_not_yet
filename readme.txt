@@ -4,6 +4,8 @@ https://github.com/ngio/jguery_not_yet.git
 
 git push origin master시 [rejected] master -> master (non-fast-forward)이런 에러가 발생하는 경우
 
+
+
 해결방법
 아래와 같이 git pull 시에 –allow-unrelated-histories 옵션 추가하여 관련 없었던 두 저장소를 병합하도록 허용
 
