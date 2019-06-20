@@ -1,0 +1,217 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>SVG, path, animation, line, draw - script Drive OnOff</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-3.1.1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 52.168447517%;
+  /*background-image: url(https://developers.naver.com/inc/devcenter/images/mapjs-sample.png);*/
+  background-size: contain;
+  box-shadow: 0 0 100px #000;
+  border-radius: 10px;
+}
+
+.map_bgimg {
+  background-image: url(https://developers.naver.com/inc/devcenter/images/mapjs-sample.png);
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  padding-bottom: 52.168447517%;
+  top: 0;
+}
+
+.line .line2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  fill-opacity: 0;
+  stroke: #f00;
+  stroke-width: 5;
+  /*외곽선을 칠하는 데 사용되는 dashes와 gaps의 패턴을 정의한다. */
+  stroke-dasharray: 1200;
+  /*dasharray의 offset 정의*/
+  stroke-dashoffset: 1200;
+}
+
+.line .line3 {
+  animation-name: draw;
+  /*애니메이션이 몇 번 반복될지 지정합니다. infinite로 지정하여 무한히 반복할 수 있습니다.*/
+  animation-duration: 5s;
+  /*한 싸이클의 애니메이션이 얼마에 걸쳐 일어날지 지정합니다.*/
+  animation-iteration-count: infinite;
+  /*애니메이션이 몇 번 반복될지 지정합니다. infinite로 지정하여 무한히 반복할 수 있습니다.*/
+  animation-timing-function: linear;
+  /*중간 상태들의 전환을 어떤 시간간격으로 진행할지 지정합니다.*/
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*------------------*/
+
+.button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button1 {
+  background-color: #4CAF50;
+}
+
+/* Green */
+
+.button2 {
+  background-color: #008CBA;
+}
+
+/* Blue */
+
+.button3 {
+  background-color: #f44336;
+}
+
+/* Red */
+
+.button4 {
+  background-color: #e7e7e7;
+  color: black;
+}
+
+/* Gray */
+
+.button5 {
+  background-color: #555555;
+}
+
+/* Black */
+
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+//<![CDATA[
+
+    window.onload=function(){
+      
+ $(document).ready(function() {
+   $('.map').css('background-image', 'url(http://www.visitthailand.or.kr/thai/files/200906/02/124391974411.jpg)');
+ });
+//-- 배경이미지 변경
+ $("#bgChg").click(function() {
+   $(".map").removeAttr("style");
+   $(".map").addClass("map_bgimg");
+ });
+//-- 경로 변경
+ $("#pathChg").click(function() {
+   $("#lineNom3").removeClass("line3");
+   $("#lineNom3").attr("d","M 950,290 950,240 650,220 530,220 500,185 260,185 220,200 200,220 160,230 120,170 90,140");	 
+   setTimeout(function() {
+     $("#lineNom3").addClass("line3");
+   }, 1000);
+ });
+ //-- 정지
+ $("#stop").click(function() {
+   $("#lineNom3").removeClass("line3");
+ });
+ //-- 정지했다가 다시 출발
+ $("#start").click(function() {
+   $("#lineNom3").removeClass("line3");
+   setTimeout(function() {
+     $("#lineNom3").addClass("line3");
+   }, 1000);
+ });
+ $("#reload").click(function() {
+   location.reload();
+ });
+  
+
+
+    }
+
+//]]></script>
+
+</head>
+<body>
+    <div class="wrapper">
+  <div class="map map_bgimg" style="background-image: url(&quot;http://www.visitthailand.or.kr/thai/files/200906/02/124391974411.jpg&quot;);"></div>
+  <div id="lineNom" class="line">
+    <svg id="lineNom2" class="line2" height="830" viewBox="0 0 1591 830" width="1591">
+      <path id="lineNom3" class="line3" d="M 
+      	90,140 
+        120,170 
+        160,230  
+        200,220        	
+        220,200
+        260,185	
+        500,185
+        530,220
+        650,220        	
+        950,240
+				950,290	
+				"></path>
+    </svg>
+  </div>
+</div>
+<br>
+<input id="bgChg" type="button" value="배경 변경" class="button button2">
+<input id="pathChg" type="button" value="경로 변경" class="button button4">
+<input id="stop" type="button" value="stop it" class="button button3">
+<input id="start" type="button" value="start it" class="button button1">
+<input id="reload" type="button" value="Reload" class="button button5">
+
+
+  
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "b29vqu0h"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
+</body></html>
