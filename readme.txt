@@ -14,6 +14,7 @@ git pull origin master --allow-unrelated-histories
 jQuery
 
 근데 jquery에서 리액트로 넘어가야 할 것인가?
+아직 생각중이다. 
 
 SELECTORS
 	Basics
