@@ -20,7 +20,7 @@ not yet!
 
 금요일이다!
 수요일이다~
-
+월요일이다.
 
 SELECTORS
 	Basics
