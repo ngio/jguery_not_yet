@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Keyboard Events</h1>
+<h2>The keyCode Property</h2>
+
+<p>Press a keyboard key in the input field and display the value:</p>
+
+<input type="text" size="40"   onkeypress="myFunction(event)">
+
+<p id="demo"></p>
+<p>The keyCode property is deprecated, use the key property instead.</p>
+
+<script>
+function myFunction(event) {
+  let value= event.which;
+  document.getElementById("demo").innerHTML = value;
+}  
+</script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#inp").keypress(function(e){
+		//검색어 입력 후 엔터키 입력하면 조회버튼 클릭
+		if(e.keyCode && e.keyCode == 13){
+			$("#btn").trigger("click");
+			return false;
+		}
+		//엔터키 막기
+		if(e.keyCode && e.keyCode == 13){
+			  e.preventDefault();	
+		}
+	});
+	$("#btn").click(function(){
+		alert("이벤트 감지");
+	});
+});
+</script>
+<input type="text" class="form-control input-sm" id="inp" name="inp">
+<button type="button" class="btn btn-primary btn-sm" id="btn" name="btn">조회</button>
+</body>
+</html>
