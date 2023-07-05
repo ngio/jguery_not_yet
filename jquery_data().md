@@ -1,0 +1,56 @@
+[.data()](https://api.jquery.com/data/)
+
+    Store arbitrary data associated with the matched elements or 
+     return the value at the named data store for the first element in the set of matched elements.
+     
+    Contents:
+    .data( key, value )
+      .data( key, value )
+      .data( obj )
+    .data( key )
+      .data( key )
+      .data()
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>data demo</title>
+  <style>
+  div {
+    color: blue;
+  }
+  span {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<body>
+ 
+<div>
+  The values stored were
+  <span></span>
+  and
+  <span></span>
+</div>
+ 
+<script>
+$( "div" ).data( "test", { first: 16, last: "pizza!" } );
+$( "span" ).first().text( $( "div" ).data( "test" ).first );
+$( "span" ).last().text( $( "div" ).data( "test" ).last );
+</script>
+ 
+</body>
+</html>
+
+
+
+
+var elem = document.createElement( "span" );
+$( elem ).data( "foo" ); // undefined
+$( elem ).data(); // {}
+ 
+$( elem ).data( "foo", 42 );
+$( elem ).data( "foo" ); // 42
+$( elem ).data(); // { foo: 42 }
