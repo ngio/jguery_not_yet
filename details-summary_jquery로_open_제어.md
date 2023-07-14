@@ -22,3 +22,9 @@ Open 추가
 Opne 제거
 
     $('details').removeAttr('open');
+
+
+    $('.info').on('click', 'details', function () {
+        $('details').removeAttr('open');
+        $(this).attr('open', '');
+    });
