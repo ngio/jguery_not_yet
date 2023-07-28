@@ -1,0 +1,46 @@
+[jQuery] 숫자에 콤마 제거, replace comma
+
+
+replace comma
+
+금액필드에 , 제거 해야할 경우
+
+
+
+amount.replace(",", "");
+
+-> only replace one comma
+
+-> 앞에 한개만 제거
+
+
+
+amount.replace(/,/g, '');
+
+-> replace all comma
+
+-> 모든 콤마 제거
+
+-> 정규식
+
+
+
+How to replace all of comma
+
+
+
+Result)
+
+amount = "1,000,000"
+
+
+
+amount.replace(",", "");
+
+1000,000
+
+
+
+amount.replace(/,/g, '');
+
+1000000
