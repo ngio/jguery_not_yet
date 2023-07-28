@@ -1,0 +1,28 @@
+[jQuery] TEXTAREA 줄 바꿈,캐리지 리턴(carriage return)  치환
+
+
+
+- textarea 의 줄바꿈 부분을 <br/>로 변경
+var str = document.getElementById("textarea").value;
+str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+document.getElementById("textarea").value = str;
+
+- <br/> 부분 줄바꿈 변경
+var str = document.getElementById("textarea").value;
+str = str.replaceAll("<br/>", "\r\n");
+document.getElementById("textarea").value = str;
+
+
+- 줄바꿈 <br/>로 변경
+
+var str = $('#textarea').val();
+str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+$('#textarea').val(str);
+
+
+- <br/> 부분 줄바꿈 변경
+
+var str = $('.#textarea').val();
+str = str.split('<br/>').join("\r\n");
+$('#textarea').val(str);
+
