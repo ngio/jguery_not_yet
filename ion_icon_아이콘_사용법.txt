@@ -1,0 +1,25 @@
+[ICON] ion-icon 아이콘 사용하기 
+
+
+
+Installation
+If you're using Ionic Framework, Ionicons is packaged by default, so no installation is necessary. 
+Want to use Ionicons without Ionic Framework? Place the following <script> near the end of your page, 
+ right before the closing </body> tag, to enable them.
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+Basic usage
+
+To use a built-in icon from the Ionicons package, populate the name attribute on the ion-icon component:
+
+<ion-icon name="heart"></ion-icon>
+
+
+
+https://ionic.io/ionicons/usage
+
+
+
