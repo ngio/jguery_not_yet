@@ -1,0 +1,18 @@
+[javascript]  마우스 우클릭 금지
+
+
+1. <head></head> 사이에 script 코드를 삽입.
+<script type="text/javascript">
+	document.oncontextmenu = function(){return false;}
+</script>
+ 
+
+2. <body> 아래에 html 코드를 삽입.
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onkeydown="return false">
+ 
+
+3. 명칭
+oncontextmenu = "return false" : 우클릭 방지
+onseletstart = "return false" : 마우스 드래그 방지
+ondragstart =  "return false" : 이미지 복사 드래그 방지
+onkeydown = "return false" : 키보드 단축키 복사 방지
