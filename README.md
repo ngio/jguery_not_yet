@@ -4,6 +4,10 @@
 
 자바스크립트 코딩 스타일 : https://ko.javascript.info/coding-style 
 
+
+
+[Top 30 JavaScript Interview Questions and Answers for 2024](https://javascriptcentric.medium.com/top-30-javascript-interview-questions-and-answers-for-2024-7f1e2d1d0638)
+
 readme test
 
 https://github.com/ngio/jguery_not_yet.git
