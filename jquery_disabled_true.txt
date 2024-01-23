@@ -1,0 +1,12 @@
+
+
+[javascript/jquery] jquery로 disabled 효과 적용/해제 방법
+
+jquery로 특정 태그에 disabled 효과를 주거나 제거할때가 있습니다.
+ 
+그럴때 attr을 이용하시면됩니다.
+
+
+
+$("대상").attr("disabled", true);
+$("대상").attr("disabled", false);
