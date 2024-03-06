@@ -1,0 +1,45 @@
+모바일 웹에서 뒤로가기 버튼 선택시 history.pushstate  사용해서 뒤로가기 이벤트 확인하기
+
+모바일 웹에서 뒤로가기 버튼 선택시 history.pushstate  사용해서 뒤로가기 이벤트 확인하기
+
+
+
+모바일 웹에서 뒤로가기 버튼을 처리하려면 JavaScript를 사용하여 history.pushState를 활용할 수 있습니다. popstate 이벤트를 사용하여 뒤로가기 버튼의 클릭을 감지할 수 있습니다. 아래는 간단한 예제 코드입니다.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뒤로가기 이벤트 확인</title>
+</head>
+<body>
+    <h1>뒤로가기 이벤트 확인</h1>
+
+    <script>
+        // 현재 상태 저장
+        history.pushState({ page: 1 }, "Title 1", "?page=1");
+
+        // 뒤로가기 이벤트 처리
+        window.addEventListener('popstate', function(event) {
+            // event.state에는 현재 상태의 데이터가 들어있습니다.
+            if (event.state) {
+                alert('뒤로가기 버튼이 눌렸습니다. 페이지 상태: ' + JSON.stringify(event.state));
+            } else {
+                // 더 이상 뒤로 갈 수 없을 때, 예를 들어 초기 페이지에서 뒤로가기 버튼을 눌렀을 때 처리할 내용을 여기에 추가할 수 있습니다.
+                alert('뒤로 갈 수 없습니다.');
+            }
+        });
+
+        // 새로운 상태 추가 및 주소 변경
+        function changeState() {
+            const newState = { page: 2 };
+            history.pushState(newState, "Title 2", "?page=2");
+        }
+    </script>
+
+    <!-- 버튼을 클릭하여 상태를 변경하고 뒤로가기 이벤트를 확인할 수 있습니다. -->
+    <button onclick="changeState()">새로운 상태로 이동</button>
+</body>
+</html>
